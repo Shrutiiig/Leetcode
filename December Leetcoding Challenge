@@ -1,8 +1,8 @@
-Day 1 ===================================> Shortest Word Distance
+Day 0 ===================================> Shortest Word Distance
 
 
 
-Day 2 ===================================> Maximum Depth of Binary Tree
+Day 1 ===================================> Maximum Depth of Binary Tree
 
 class Solution {
     public int maxDepth(TreeNode root) {
@@ -14,7 +14,7 @@ class Solution {
 }
 
 
-Day 3 ===================================> Linked List Random Node
+Day 2 ===================================> Linked List Random Node
 
 class Solution {
 
@@ -36,7 +36,7 @@ class Solution {
 }
 
 
-Day 4 ===================================> Increasing Order Search Tree
+Day 3 ===================================> Increasing Order Search Tree
 
 class Solution {
     TreeNode curr;
@@ -58,7 +58,7 @@ class Solution {
 }
 
 
-Day 5 ===================================> The kth Factor of n
+Day 4 ===================================> The kth Factor of n
 
 public int kthFactor(int n, int k) {
     ArrayList<Integer> list = new ArrayList<>();
@@ -74,4 +74,52 @@ public int kthFactor(int n, int k) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Day 10 ===================================> Valid Mountain Array
+
+class Solution {
+    public boolean validMountainArray(int[] arr) {
+        if( arr.length < 3 ) return false;
+        
+        if( arr[0] > arr[1] ) return false;
+        
+        int i=1;
+        while( i < arr.length && arr[i-1] <= arr[i] ){
+            if( arr[i-1] == arr[i] ) return false;
+            i++;
+        }
+        if( i == arr.length ) return false;
+        
+        while( i < arr.length && arr[i-1] > arr[i] ){
+            i++;
+        }
+        
+        if( i == arr.length ) return true;
+        return false;
+    }
+}
+
+
 Day 6 ===================================> 
+
+
+

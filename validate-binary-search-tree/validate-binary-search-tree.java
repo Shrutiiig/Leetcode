@@ -1,14 +1,13 @@
 /*↔*/
 class Solution {
-    public boolean isValidBST(TreeNode root){↔}
+    public boolean isValidBST(TreeNode root) {
+        return helper( root,null,null );
+    }
     
-    public boolean isValidBST(TreeNode root, Integer min, Integer max) {
+    public boolean helper(TreeNode root, Integer min, Integer max){
         if( root == null ) return true;
-        
-        int val = root.val;
-        if( min != null && min >= val ) return false;
-        if( max != null && max <= val ) return false;
-        
-        return isValidBST(root.left,min,val) && isValidBST(root.right,val,max);
+        if( max != null && root.val >= max ) return false;
+        if( min != null && root.val <= min ) return false;
+        return helper( root.left,min,root.val ) && helper( root.right,root.val,max );
     }
 }
